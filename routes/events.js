@@ -18,13 +18,7 @@ router.use(validarJWT);
 // Obtener eventos
 router.get(
     '/',
-    [
-        check('title', 'El titulo es requerido').not().isEmpty(),
-        check('start', 'Fcha de inicio es requerido').custom( isDate ),
-        check('end', 'Fcha de finalización es requerido').custom( isDate ),
-        validarCampos
-    ], 
-    getEvento
+    getEvento,
 )
 
 // Crear un nuevo evento
